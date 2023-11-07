@@ -1,0 +1,33 @@
+--abastecimiento de mongo en docker
+
+--corremos el comando:
+
+docker pull mongo
+
+y luego creamos el contenedor con la siguiente linea:
+
+docker run -d -p 27017:27017 --name mongodb-tadb mongo
+
+Una vez corriendo el contenedor accedemos a mongo para crear un usuario administridor con el que vamos a acceder al bd
+
+entramos a mongo por la terminal ejecutando:
+
+mongosh
+
+una vez ingresamos a mongo ejecutamos la siguiente lineas para crear nuestro usuario:
+
+use admin
+
+db.createUser({
+    user: "usuario1",
+    pwd: "12345",
+    roles: [
+        {
+            role: "userAdminAnyDatabase",
+            db: "admin"
+        },
+        "readWriteAnyDatabase"
+    ],
+});
+
+Ahora procedemos a conectarnos a traves de nuestro IDE de preferencia en mi caso será DataGrip

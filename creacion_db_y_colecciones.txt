@@ -1,0 +1,12 @@
+use gestion_tpe
+
+db.createCollection("Autobuses")
+
+db.createCollection("Cargadores")
+
+db.createCollection("Horarios")
+
+db.createCollection("Horario_Cargadores")
+
+db.createCollection("Horario_Autobuses")
+

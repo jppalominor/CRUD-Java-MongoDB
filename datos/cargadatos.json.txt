@@ -1,0 +1,56 @@
+db.Autobuses.insertMany([
+  { id_autobus: 1, placa: 'ABC123', modelo: 2018 },
+  { id_autobus: 2, placa: 'XYZ789', modelo: 2019 },
+  { id_autobus: 3, placa: 'DEF456', modelo: 2017 },
+  { id_autobus: 4, placa: 'GHI789', modelo: 2020 },
+  { id_autobus: 5, placa: 'JKL012', modelo: 2021 },
+  { id_autobus: 6, placa: 'MNO345', modelo: 2018 },
+  { id_autobus: 7, placa: 'PQR678', modelo: 2022 },
+  { id_autobus: 8, placa: 'STU901', modelo: 2021 },
+  { id_autobus: 9, placa: 'VWX234', modelo: 2019 },
+  { id_autobus: 10, placa: 'YZA567', modelo: 2021 },
+  { id_autobus: 11, placa: 'BCD890', modelo: 2023 },
+  { id_autobus: 12, placa: 'EFG123', modelo: 2023 },
+  { id_autobus: 13, placa: 'HIJ456', modelo: 2018 },
+  { id_autobus: 14, placa: 'KLM789', modelo: 2020 },
+  { id_autobus: 15, placa: 'NOP012', modelo: 2019 }
+]);
+
+db.Horarios.insertMany([
+{Hora: 0 },
+{Hora: 1 },
+{Hora: 2 },
+{Hora: 3 },
+{Hora: 4 },
+{Hora: 5 },
+{Hora: 6 },
+{Hora: 7 },
+{Hora: 8 },
+{Hora: 9 },
+{Hora: 10 },
+{Hora: 11 },
+{Hora: 12 },
+{Hora: 13 },
+{Hora: 14 },
+{Hora: 15 },
+{Hora: 16 },
+{Hora: 17 },
+{Hora: 18 },
+{Hora: 19 },
+{Hora: 20 },
+{Hora: 21 },
+{Hora: 22 },
+{Hora: 23 }
+]);
+
+
+db.Cargadores.insertMany([
+{id_cargador: 01 },
+{id_cargador: 02 },
+{id_cargador: 03 },
+{id_cargador: 04 },
+{id_cargador: 05 },
+{id_cargador: 06 },
+{id_cargador: 07 },
+{id_cargador: 08 }
+]);;

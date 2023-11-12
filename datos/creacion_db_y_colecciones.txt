@@ -4,9 +4,101 @@ db.createCollection("Autobuses")
 
 db.createCollection("Cargadores")
 
-db.createCollection("Horarios")
-
 db.createCollection("Horario_Cargadores")
 
 db.createCollection("Horario_Autobuses")
 
+JSON de validaciones:
+
+db.createCollection("Autobuses",{
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            title: "Autobuses del transporte publico",
+            required: ["_id", "placa", "modelo"],
+            properties: {
+                id: {
+                    bsonType: "int",
+                    description: "'id' es el identificador del autobus, es un numero y no puede ser nulo"
+                },
+                placa: {
+                    bsonType: "string",
+                    description: "'placa' no puede tener mas de 6 digitos y no pude ser nulo"
+                },
+                modelo: {
+                    bsonType: "string",
+                    description: "'modelo' no puede ser nulo"
+                }
+            }
+
+        }
+    }
+
+
+    });
+
+db.createCollection("Cargadores",{
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            title: "Cargadores de Autobuses electricos",
+            required: ["_id" ],
+            properties: {
+                id: {
+                    bsonType: "int",
+                    description: "'id' es el identificador del cargador, es un numero y no puede ser nulo"
+                }
+            }
+        }
+    }
+});
+
+db.createCollection("Horario_Autobuses",{
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            title: "Programacion de Autubuses(Rutas) por hora",
+            required: ["hora"],
+            properties: {
+                hora: {
+                    bsonType: "int",
+                    description: "'hora' es la hora para la que se programa una ruta a un autobus"
+                }
+
+            }
+
+        }
+    }
+
+
+    });
+
+
+db.createCollection("Horario_Cargadores",{
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            title: "Programacion de Cargadores por hora",
+            required: ["hora"],
+            properties: {
+                hora: {
+                    bsonType: "int",
+                    description: "'hora' es la hora para la que se programa un cargador y un autobus"
+                }
+
+            }
+
+        }
+    }
+
+
+    });
+    
+
+// Optional<Cargador> unCargador = cargadorRepo.findById(cargador.getId());
+
+        //Verificamos que el cargador a guardar no exista
+        /*if(unCargador.isPresent()){
+                throw new RuntimeException("El cargador ya existe");
+                 }
+        */

@@ -44,6 +44,16 @@ public class AutobusController {
         
     }
 
+    @GetMapping("/placa/{placa}")
+    public ResponseEntity<?> findByPlaca(@PathVariable String placa){
+        try {
+            return new ResponseEntity<Autobus>(autobusService.findByPlaca(placa),HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<String>(e.getCause().toString(),HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable int id){
         try {

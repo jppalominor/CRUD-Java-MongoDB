@@ -58,11 +58,15 @@ db.createCollection("Horario_Autobuses",{
         $jsonSchema: {
             bsonType: "object",
             title: "Programacion de Autubuses(Rutas) por hora",
-            required: ["hora"],
+            required: ["_id", "autobuses"],
             properties: {
-                hora: {
+                _id: {
                     bsonType: "int",
-                    description: "'hora' es la hora para la que se programa una ruta a un autobus"
+                    description: "'id' es la hora para la que se programa una ruta a un autobus"
+                },
+                autobuses: {
+                    bsonType: "object",
+                    description: "Lista de autobuses a programar"
                 }
 
             }
@@ -95,10 +99,3 @@ db.createCollection("Horario_Cargadores",{
     });
     
 
-// Optional<Cargador> unCargador = cargadorRepo.findById(cargador.getId());
-
-        //Verificamos que el cargador a guardar no exista
-        /*if(unCargador.isPresent()){
-                throw new RuntimeException("El cargador ya existe");
-                 }
-        */

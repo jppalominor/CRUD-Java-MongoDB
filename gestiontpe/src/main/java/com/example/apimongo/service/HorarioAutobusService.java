@@ -28,9 +28,11 @@ public class HorarioAutobusService {
         return horarioAutobusRepo.findById(hora);
     }
 
-    public void update(int hora, List<Autobus> autobuses){
-      
-        //TODO: implementar actualizacion de lista de buses por hora
+    public Horario_Autobuses update(int hora, List<Autobus> autobuses){
+        horarioAutobusRepo.deleteById(hora);
+
+        Horario_Autobuses nuevoHorario = new Horario_Autobuses(hora, autobuses);
+        return horarioAutobusRepo.save(nuevoHorario);
        
     }
     public void deleteAutobus(int hora, String placa){

@@ -83,12 +83,21 @@ db.createCollection("Horario_Cargadores",{
         $jsonSchema: {
             bsonType: "object",
             title: "Programacion de Cargadores por hora",
-            required: ["hora"],
+            required: ["_id", "cargador", "autobus" ],
             properties: {
-                hora: {
+                _id: {
                     bsonType: "int",
                     description: "'hora' es la hora para la que se programa un cargador y un autobus"
+                },
+                cargador: {
+                    bsonType: "object",
+                    description: "'cargador' es el cargador para el que se programa"
+                },
+                autobus: {
+                    bsonType: "object",
+                    description: "'autobus' es el autobus para el que se programa un cargador"
                 }
+
 
             }
 
